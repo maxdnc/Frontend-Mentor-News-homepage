@@ -164,7 +164,6 @@ header {
   right: -100%;
   top: 0;
   z-index: 100;
-  transition: right 0.3s ease-in-out;
 }
 .nav-menu.active {
   right: -40%;
@@ -188,8 +187,13 @@ header {
   margin-bottom: 1rem;
 }
 
-.main-image-full {
-  display: none;
+.imagemain {
+  background-image: url(images/image-web-3-mobile.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  aspect-ratio: 1/1;
+  max-height: 300px;
 }
 
 /* read more link button */
@@ -207,6 +211,7 @@ header {
   margin-top: 1rem;
   margin-bottom: 1rem;
   transition: background 0.2s;
+  width: 11.5625rem;
 }
 .read-more:hover {
   background: hsl(240deg, 100%, 5%);
@@ -215,7 +220,6 @@ header {
 /* aside style and shape */
 aside {
   background: hsl(240deg, 100%, 5%);
-  max-width: 28rem;
   min-width: 9rem;
   min-height: 30.625rem;
   margin-top: 2rem;
@@ -310,7 +314,7 @@ aside {
 /* destok device */
 @media screen and (min-width: 780px) {
   .block {
-    margin: 2% 10%;
+    margin: 2% 8%;
     max-width: 1110px;
   }
   .hamburger {
@@ -366,8 +370,8 @@ aside {
     flex-wrap: wrap;
     margin: 0;
     max-width: 21.875rem;
-    min-width: 0rem;
-    min-height: 30.625rem;
+    min-width: 0;
+    min-height: 0;
   }
   .aside-list {
     display: flex;
@@ -379,19 +383,24 @@ aside {
   }
   .main-grid {
     display: grid;
-    grid-template-columns: -webkit-max-content -webkit-max-content;
-    grid-template-columns: max-content max-content;
+    grid-template-columns: 2fr 1fr;
     gap: 2rem;
     margin: 2rem 0;
   }
   .main-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     max-width: 45.625rem;
   }
-  .main-image-full {
-    display: block;
-  }
-  .main-image {
-    display: none;
+  .imagemain {
+    background-image: url(images/image-web-3-desktop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+    max-height: 300px;
   }
   h2 {
     display: flex;
@@ -433,7 +442,6 @@ aside {
     margin-top: 1rem;
     margin-bottom: 0;
     max-height: 3rem;
-    width: 11.5625rem;
   }
   .footer-article {
     display: grid;
